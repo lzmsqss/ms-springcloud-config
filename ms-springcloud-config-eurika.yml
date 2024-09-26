@@ -1,0 +1,39 @@
+spring:
+  profiles:
+    active: dev #激活开发环境配置
+---
+server:
+  port: 6001 #端口号
+spring: 
+  profiles: dev  #开发环境
+  application:
+    name: ms-config-eureka
+eureka:
+  instance:
+    hostname: eureka6001.com # eureka服务端的实例名称
+  client:
+    register-with-eureka: false # 服务注册，false表示不注册（服务本身无需注册）
+    fetch-registry: false       # 服务发现，false表示不发现（服务本身无需发现微服务）
+    service-url:  
+      defaultZone:  http://eureka6001.com:6001/eureka
+      server:
+    #关闭enable的自我保护机制，默认是开启的
+    enable-self-preservation: false
+---
+server:
+  port: 6001 #端口号
+spring: 
+  profiles: prod  #开发环境
+  application:
+    name: ms-config-eureka
+eureka:
+  instance:
+    hostname: eureka6001.com # eureka服务端的实例名称
+  client:
+    register-with-eureka: false # 服务注册，false表示不注册（服务本身无需注册）
+    fetch-registry: false       # 服务发现，false表示不发现（服务本身无需发现微服务）
+    service-url:  
+      defaultZone:  http://eureka6001.com:6001/eureka
+      server:
+    #关闭enable的自我保护机制，默认是开启的
+    enable-self-preservation: true
