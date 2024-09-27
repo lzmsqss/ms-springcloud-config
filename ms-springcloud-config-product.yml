@@ -41,6 +41,9 @@ eureka:
     instance-id: ${spring.application.name}:${server.port}
     #在status点击url路径前加上ip地址
     prefer-ip-address: true
+#自定义配置属性
+student:
+  name: 张三
 ---
 server:
   port: 8001 #端口号
