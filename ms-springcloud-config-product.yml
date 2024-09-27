@@ -43,7 +43,7 @@ eureka:
     prefer-ip-address: true
 #自定义配置属性
 student:
-  name: lisi
+  name: wangwu
 ---
 server:
   port: 8001 #端口号
